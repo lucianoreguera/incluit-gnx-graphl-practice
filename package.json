@@ -1,0 +1,28 @@
+{
+  "name": "gnx-graphql-practice",
+  "version": "1.0.0",
+  "description": "Final work course node graphql - gnx",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Luciano Reguera",
+  "license": "ISC",
+  "dependencies": {
+    "@simtlix/gnx": "^2.4.1",
+    "express": "^4.17.1",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.5.8",
+    "mongoose": "^5.7.12",
+    "graphql-iso-date": "^3.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}
