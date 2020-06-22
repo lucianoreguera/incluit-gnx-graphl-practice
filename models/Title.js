@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const TitleSchema = new Schema({
     title: {
-        type: Number,
+        type: String,
         required: true
     },
     from_date: {
@@ -14,7 +14,7 @@ const TitleSchema = new Schema({
         type: Date
     },
     employeeID: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         required: true
     }
 });

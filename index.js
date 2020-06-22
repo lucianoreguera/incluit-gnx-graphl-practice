@@ -8,7 +8,10 @@ const app = express();
 
 mongoose.plugin(require('./plugins/auditablePluginSchema'));
 mongoose.connect('mongodb://localhost:27017,localhost:27018,localhost:27019/example', { 
-    replicaSet: 'rs' 
+    replicaSet: 'rs',
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 mongoose.connection.once('open', () => {
     console.log('connected to database');
@@ -16,7 +19,7 @@ mongoose.connection.once('open', () => {
 
 const types = require('./types');
 const includedTypes = Object.values(types);
-const schema = gnx.createSchema(includedTypes,includedTypes);
+const schema = gnx.createSchema(includedTypes, includedTypes);
 
 app.use('/graphql', graphqlHTTP({
     schema,

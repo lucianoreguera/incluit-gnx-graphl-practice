@@ -1,0 +1,123 @@
+Add Employee
+mutation {
+  addemployee(input: {
+    dni: "12345678"
+    first_name: "Homero"
+    last_name: "Simpson"
+    gender: M
+    birth_date: "1972-01-01"
+    hire_date: "2019-01-01"
+  }) {
+    id
+    first_name
+    last_name
+    birth_date
+    hire_date
+    gender
+    createdAt
+    updatedAt
+  }
+}
+
+--------------------------------------------
+Add Title
+mutation {
+  addtitle(input: {
+    title: "Ing. Nuclear"
+    from_date: "2010-01-01"    
+    to_date: "2020-01-01"
+    employee: {
+      id: "5ef0b39d66a97b2c7260e506"
+    }
+  }) {
+  	title
+    from_date
+    employee{
+      dni
+      first_name
+    }
+  }
+}
+
+-----------------------------------------------
+Add Salary
+mutation {
+  addsalary(input: {
+    salary: 1000
+    from_date: "2020-01-01"
+    to_date:"2020-02-02"
+    employee:{
+ 			id:"5ef0b39d66a97b2c7260e506"
+    }
+  })
+  {
+    salary
+    from_date
+    employee {
+      dni
+  	}
+  }
+}
+
+-----------------------------------------------
+Add Departament
+mutation {
+  adddepartament(input:{
+    name: "Billing"
+  })
+  {
+    id
+    name
+  }
+}
+
+-----------------------------------------------
+Add Manager Departament
+mutation {
+  adddepartamentManager(input: {
+    from_date:"2020-01-01"
+    to_date: "2020-03-10"
+    departament: {
+       id: "5ef0bb8858add334f2a63775"
+    }
+    employee: {
+       id: "5ef0b39d66a97b2c7260e506"
+    }
+  })
+  {
+    departament {
+      name
+    }
+    employee {
+      first_name
+      last_name
+    }
+    from_date
+    to_date
+  }
+}
+
+-----------------------------------------------
+Add Employees Departament
+mutation {
+  adddepartamentEmployee(input: {
+    employee:{
+    	id: "5ef0bbcc58add334f2a63776" 
+    }
+    department:{
+    	id: "5ef0bb8858add334f2a63775" 
+    }
+    from_date:"2020-01-02"
+    to_date:"2020-03-03"
+  })
+  {
+    from_date
+    employee{
+      first_name
+      last_name
+    }
+    department{
+      name
+    }
+  }
+}

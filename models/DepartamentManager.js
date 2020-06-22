@@ -9,11 +9,11 @@ const DepartamentManagerSchema = new Schema({
     to_date: {
         type: Date
     },
-    employeeID: {
+    departamentID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
-    departamentID: {
+    employeeID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true
     }
